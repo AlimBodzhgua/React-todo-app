@@ -1,21 +1,51 @@
 {
-	"users": [
-		{
-			"id": 1,
-			"login": "Alim",
-			"password": "qweasdzxc123",
-			"email": "alim@mail.ru",
-			"categories": [
-				{
-					"id": 1,
-					"categoryName": "Frontend",
-					"tasks": {
-						"id": 123,
-						"taskValue": "Learn react",
-						"isComplete": "false",
-					}
-				}
-			] 
-		}
-	]
+  "users": [
+    {
+      "id": 1,
+      "login": "login1",
+      "email": "login@mail.ru",
+      "password": "password1",
+      "categories": [
+        {
+          "id": 1,
+          "categoryName": "Frontend",
+          "tasks": [
+            {
+              "id": 1,
+              "value": "task1",
+              "isComplete": "false"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "login": "alimbo2",
+      "email": "alim@mail.ru",
+      "password": "alim12345",
+      "categories": [],
+      "id": 2
+    },
+    {
+      "login": "alimbo1",
+      "email": "alim@mail.ru",
+      "password": "alim12345",
+      "categories": [],
+      "id": 3
+    },
+    {
+      "login": "alimbo2",
+      "email": "alim@mail.ru",
+      "password": "alim12345",
+      "categories": [],
+      "id": 4
+    },
+    {
+      "login": "alim1234",
+      "email": "alim@mail.ru",
+      "password": "alim123456",
+      "categories": [],
+      "id": 5
+    }
+  ]
 }
