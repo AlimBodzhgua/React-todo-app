@@ -25,44 +25,6 @@
       "password": "alim12345",
       "categories": [],
       "id": 2
-    },
-    {
-      "login": "alimbo1",
-      "email": "alim@mail.ru",
-      "password": "alim12345",
-      "categories": [],
-      "id": 3
-    },
-    {
-      "login": "alimbo2",
-      "email": "alim@mail.ru",
-      "password": "alim12345",
-      "categories": [],
-      "id": 4
-    },
-    {
-      "login": "alim1234",
-      "email": "alim@mail.ru",
-      "password": "alim123456",
-      "categories": [],
-      "id": 5
-    },
-    {
-      "login": "AlimBodzhgua",
-      "email": "asdf@mail.ru",
-      "password": "qweasdzxc",
-      "categories": [],
-      "id": 6
-    },
-    {
-      "email": "alim@mail.ru",
-      "password": "alim123456",
-      "id": 7
-    },
-    {
-      "email": "alim@mail.ru",
-      "password": "alim123456",
-      "id": 8
     }
   ]
 }
