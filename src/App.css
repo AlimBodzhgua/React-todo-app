@@ -1,0 +1,73 @@
+
+*,
+*before,
+*after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{ 
+    padding: 0;
+    margin: 0;
+}
+
+.App {
+
+}
+
+.register {
+    height: 100vh;
+    background: linear-gradient(to left, #1E90FF, #00FFFF);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.register__inner {
+    background-color: #fff;
+    border-radius: 7px;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    max-width: 400px;
+    width: 100%;
+}
+
+.register__title {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.form {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form__input {
+    height: 40px;
+    border: none;
+    border: 2px solid #0f303f;
+    padding: 0 10px;
+}
+
+.form__actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-btn {
+    align-self: center;
+    padding: 11px 20px;
+    margin: 0px 5px;
+}
+

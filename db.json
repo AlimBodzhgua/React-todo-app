@@ -1,0 +1,21 @@
+{
+	"users": [
+		{
+			"id": 1,
+			"login": "Alim",
+			"password": "qweasdzxc123",
+			"email": "alim@mail.ru",
+			"categories": [
+				{
+					"id": 1,
+					"categoryName": "Frontend",
+					"tasks": {
+						"id": 123,
+						"taskValue": "Learn react",
+						"isComplete": "false",
+					}
+				}
+			] 
+		}
+	]
+}
