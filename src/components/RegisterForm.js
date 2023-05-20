@@ -11,11 +11,7 @@ export default function RegisterForm({registerUser}) {
 	} = useForm({mode: 'onChange'});
 
 	return (
-		<form
-			noValidate
-			className="form"
-			onSubmit={handleSubmit(registerUser)}
-		>
+		<form noValidate className="form" onSubmit={handleSubmit(registerUser)}>
 			<input
 				{...register("login", {
 					required: {
@@ -85,9 +81,7 @@ export default function RegisterForm({registerUser}) {
 				type="password"
 				placeholder="Repeat Password"
 			/>
-			{errors.passwordConfirm && (
-				<div>{errors.passwordConfirm.message}</div>
-			)}
+			{errors.passwordConfirm && <div>{errors.passwordConfirm.message}</div>}
 			<div className="form__actions">
 				<button class="register-btn">Sign up</button>
 				<p>

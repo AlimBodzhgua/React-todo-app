@@ -16,7 +16,8 @@ body{
 
 }
 
-.register {
+.register,
+.login {
     height: 100vh;
     background: linear-gradient(to left, #1E90FF, #00FFFF);
 
@@ -25,7 +26,8 @@ body{
     justify-content: center;
 }
 
-.register__inner {
+.register__inner,
+.login__inner {
     background-color: #fff;
     border-radius: 7px;
     padding: 10px;
@@ -38,7 +40,8 @@ body{
     width: 100%;
 }
 
-.register__title {
+.register__title
+.login__title {
     margin-bottom: 10px;
     text-transform: uppercase;
 }
