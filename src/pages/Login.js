@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
 import LoginForm from '../components/LoginForm';
@@ -7,7 +7,6 @@ export default function Login() {
 	const navigate = useNavigate();
 
 	const loginUser = async(data) => {
-		console.log(data);
 		try {
 			const response = await axios.post('http://localhost:8080/users', {...data});
 			console.log(response);

@@ -1,30 +1,11 @@
 {
-  "users": [
-    {
-      "id": 1,
-      "login": "login1",
-      "email": "login@mail.ru",
-      "password": "password1",
-      "categories": [
+    "users": [
         {
-          "id": 1,
-          "categoryName": "Frontend",
-          "tasks": [
-            {
-              "id": 1,
-              "value": "task1",
-              "isComplete": "false"
-            }
-          ]
+            "email": "alimbo1@mail.ru",
+            "password": "$2a$10$fWilEmaYbWO2xe5q0C/DYOt.VBKo9A.0pJZtFFqQ86u.Lb7T95l46",
+            "login": "alimbo1",
+            "categories": [],
+            "id": 2
         }
-      ]
-    },
-    {
-      "login": "alimbo2",
-      "email": "alim@mail.ru",
-      "password": "alim12345",
-      "categories": [],
-      "id": 2
-    }
-  ]
+    ]
 }
