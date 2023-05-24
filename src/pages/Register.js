@@ -1,8 +1,8 @@
 import React, {useContext, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
-import axios from 'axios';
-import RegisterForm from '../components/RegisterForm';
 import {UserContext} from '../context/index';
+import RegisterForm from '../components/RegisterForm';
+import axios from 'axios';
 
 export default function Register() {
 	const navigate = useNavigate();

@@ -1,11 +1,74 @@
 {
-    "users": [
+  "users": [
+    {
+      "id": 1,
+      "email": "alimbo1@mail.ru",
+      "password": "$2a$10$JNspngY7YIcwqOu/W3gu2.Rhl50HtdIDRLxSRVl4X42B24bj4SDIG",
+      "login": "alimbo1",
+      "categories": [
         {
-            "email": "alimbo1@mail.ru",
-            "password": "$2a$10$fWilEmaYbWO2xe5q0C/DYOt.VBKo9A.0pJZtFFqQ86u.Lb7T95l46",
-            "login": "alimbo1",
-            "categories": [],
-            "id": 2
+          "id": 1,
+          "name": "new folder",
+          "color": "#FF0000",
+          "tasks": [
+            {
+              "id": 1,
+              "name": "task 1",
+              "isCompleted": false
+            },
+            {
+              "id": 2,
+              "name": "new",
+              "isCompleted": false
+            },
+            {
+              "id": 3,
+              "name": "new 3",
+              "isCompleted": false
+            },
+            {
+              "id": 4,
+              "name": "new 8",
+              "isCompleted": false
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "folder",
+          "color": "#32CD32",
+          "tasks": [
+            {
+              "id": 1,
+              "name": "new 5",
+              "isCompleted": false
+            },
+            {
+              "id": 2,
+              "name": "new 3",
+              "isCompleted": false
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "name": "qwe",
+          "color": "#1E90FF",
+          "tasks": []
+        },
+        {
+          "id": 4,
+          "name": "new folder",
+          "color": "#800080",
+          "tasks": [
+            {
+              "id": 1,
+              "name": "zxc",
+              "isCompleted": false
+            }
+          ]
         }
-    ]
+      ]
+    }
+  ]
 }

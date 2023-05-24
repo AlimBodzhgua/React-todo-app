@@ -9,9 +9,7 @@ export default function Login() {
 	const loginUser = async(data) => {
 		try {
 			const response = await axios.post('http://localhost:8080/users', {...data});
-			console.log(response);
 			if (response.status === 201) {
-				console.log('user logged in');
 				navigate('/');
 			}
 		} catch (error) {
