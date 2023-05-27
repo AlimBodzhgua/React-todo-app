@@ -1,7 +1,7 @@
 import React from 'react';
 import CategoryItem from './CategoryItem';
 
-export default function CategoryList({user, selectedCategory, setSelectedCategory}) {
+export default function CategoryList({user, selectedCategory, setSelectedCategory, setBorderColor}) {
 
 	return (
 		<ul className="categories">
@@ -9,6 +9,7 @@ export default function CategoryList({user, selectedCategory, setSelectedCategor
 				? 	user.categories.map(category => 
 						<CategoryItem
 							key={category.id}
+							setBorderColor={setBorderColor}
 							category={category}
 							selectedCategory={selectedCategory}
 							setSelectedCategory={setSelectedCategory}

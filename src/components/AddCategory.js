@@ -1,20 +1,23 @@
-import React, {useContext, useState, useEffect} from 'react';
-import {colors} from '../utils/colorsData';
-import {UserContext} from '../context/index';
-import ColorItem from './ColorItem';
+import React, {useContext, useState, useEffect, useRef} from 'react'; import
+{colors} from '../utils/colorsData'; import
+{UserContext} from '../context/index'; import ColorItem from './ColorItem';
 import axios from 'axios';
+import {isStringNotEmpty} from '../utils/utils.js';
 
-
-export default function AddCategory({addMenu}) {
+export default function AddCategory({addMenu, setSelectedCategory, setBorderColor}) {
 	const {user, setUser} = useContext(UserContext);
 	const [value, setValue] = useState('')
 	const [selectedColor, setSelectedColor] = useState(null);
+	const inputRef = useRef()
+
+	useEffect(() => {
+		inputRef.current.focus();
+	}, [])
 
 	const addCategory = (e) => {
 		e.preventDefault();
 
 		if (value.length) {
-			console.log(user.categories.length);
 			const id = user.categories.length + 1;
 			const newCategory = {
 				id: id,
@@ -22,15 +25,13 @@ export default function AddCategory({addMenu}) {
 				color: selectedColor,
 				tasks: [],
 			}
-			console.log(newCategory);
-			//If initial categories is empty
-			if ((user.categories).length) {
-				setUser({...user, categories: [...user.categories, newCategory]});		
-			} else {
-				setUser({...user, categories: [newCategory]});						
-			}
-			setSelectedColor(null);
+			setUser({...user, categories: [...user.categories, newCategory]});			
+			setBorderColor(selectedColor);
+			setSelectedCategory(id);
 			setValue('');
+			setSelectedColor(null);
+		} else {
+			alert('Input field is empty');
 		}
 	}
 
@@ -45,6 +46,7 @@ export default function AddCategory({addMenu}) {
 			<input
 				value={value}
 				onChange={(e) => setValue(e.target.value)}
+				ref={inputRef}
 				className="add-menu__input"
 				type="text"
 				placeholder="folder name..."

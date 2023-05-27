@@ -1,8 +1,12 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 
 
 export default function AddTask({setTaskMenu, addTask}) {
 	const inputRef = useRef();
+
+	useEffect(() => {
+		inputRef.current.focus();
+	}, []) 
 
 	return (
 		<div className="task-menu">
@@ -13,7 +17,10 @@ export default function AddTask({setTaskMenu, addTask}) {
 				placeholder="Your task text..."
 			/>
 			<button
-				onClick={() => addTask(inputRef.current.value)}
+				onClick={() => {
+					addTask(inputRef.current.value)
+					inputRef.current.value = '';
+				}}
 				className="task-menu__add"
 			>Добавить задачу</button>
 			<button

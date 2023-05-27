@@ -6,6 +6,8 @@ import axios from 'axios';
 import {UserContext} from '../context/index';
 import Sidebar from '../components/Sidebar';
 
+import Test from '../components/Test';
+
 export default function Home() {
 	const {user, setUser} = useContext(UserContext);
 	const [selectedCategory, setSelectedCategory] = useState(0);

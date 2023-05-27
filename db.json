@@ -3,68 +3,64 @@
     {
       "id": 1,
       "email": "alimbo1@mail.ru",
-      "password": "$2a$10$JNspngY7YIcwqOu/W3gu2.Rhl50HtdIDRLxSRVl4X42B24bj4SDIG",
+      "password": "$2a$10$KXxNJ6KT9U7aEV0pU0UOZ.rAA1u.oQV79CK0dMiMBHcLlO54A9aTu",
       "login": "alimbo1",
       "categories": [
         {
           "id": 1,
-          "name": "new folder",
-          "color": "#FF0000",
+          "name": "new cat",
+          "color": "#32CD32",
           "tasks": [
             {
               "id": 1,
-              "name": "task 1",
-              "isCompleted": false
-            },
-            {
-              "id": 2,
-              "name": "new",
-              "isCompleted": false
-            },
-            {
-              "id": 3,
-              "name": "new 3",
-              "isCompleted": false
-            },
-            {
-              "id": 4,
-              "name": "new 8",
+              "name": "sd",
               "isCompleted": false
             }
           ]
         },
         {
           "id": 2,
-          "name": "folder",
-          "color": "#32CD32",
+          "name": "back",
+          "color": "#FF4500",
           "tasks": [
             {
               "id": 1,
-              "name": "new 5",
-              "isCompleted": false
+              "name": "cxzc",
+              "isCompleted": true
             },
             {
               "id": 2,
-              "name": "new 3",
+              "name": "zxc",
+              "isCompleted": true
+            },
+            {
+              "id": 3,
+              "name": "b nm",
               "isCompleted": false
             }
           ]
         },
         {
           "id": 3,
-          "name": "qwe",
-          "color": "#1E90FF",
-          "tasks": []
-        },
-        {
-          "id": 4,
-          "name": "new folder",
+          "name": "trew",
           "color": "#800080",
           "tasks": [
             {
               "id": 1,
-              "name": "zxc",
+              "name": "new task",
               "isCompleted": false
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "name": "zxcw",
+          "color": null,
+          "tasks": [
+            {
+              "id": 1,
+              "name": "rew",
+              "isCompleted": true
             }
           ]
         }

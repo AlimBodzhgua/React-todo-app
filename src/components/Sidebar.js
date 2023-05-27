@@ -6,14 +6,16 @@ import CategoryList from './CategoryList';
 
 
 export default function Sidebar({selectedCategory, setSelectedCategory}) {
+	const {user, setUser, fetchUser} = useContext(UserContext);
 
 	const [addCategoryMenu, setAddCategoryMenu] = useState(false);
-	const {user, setUser, fetchUser} = useContext(UserContext);
 	const [userIsLoading, setUserIsLoading] = useState(true);
+	const [borderColor, setBorderColor] = useState();
 
 	useEffect(() => {
 		const token = localStorage.getItem('token');
-		fetchUser(token).then(setUserIsLoading(false));
+		fetchUser(token);
+		setUserIsLoading(false);
 	}, [])
 
 	const addMenu = (e) => {
@@ -22,7 +24,7 @@ export default function Sidebar({selectedCategory, setSelectedCategory}) {
 	}
 
 	return (
-		<aside className="sidebar">
+		<aside className="sidebar" style={{borderRight: borderColor && `3px solid ${borderColor}`}}>
 			<div className="sidebar__header">
 				<span className="sidebar__icon"></span>
 				<h3 className="sidebar__title">Все задачи</h3>
@@ -32,6 +34,7 @@ export default function Sidebar({selectedCategory, setSelectedCategory}) {
 				? <h3>Loading content...</h3>
 				: <CategoryList 
 					user={user}
+					setBorderColor={setBorderColor}
 					selectedCategory={selectedCategory}
 					setSelectedCategory={setSelectedCategory}
 				  /> 
@@ -41,7 +44,13 @@ export default function Sidebar({selectedCategory, setSelectedCategory}) {
 				+ Добавить папку
 			</button>
 			{addCategoryMenu && 
-				<AddCategory addMenu={addMenu} user={user} setUser={setUser}/>
+				<AddCategory 
+					addMenu={addMenu} 
+					user={user} 
+					setUser={setUser}
+					setBorderColor={setBorderColor}
+					setSelectedCategory={setSelectedCategory}
+				/>
 			}
 		</aside>
 	);

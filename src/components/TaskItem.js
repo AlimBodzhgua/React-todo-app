@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function TaskItem({task}) {
+export default function TaskItem({task, deleteTask, changeTaskComplete}) {
 	return (
 		<li className="tasks__item">
 			<input 
-				onChange={() => console.log(!task.isCompleted)}
+				onChange={() => changeTaskComplete(task.id)}
 				checked={task.isCompleted}
 				className="tasks__select" 
 				type="checkbox" 
@@ -12,6 +12,10 @@ export default function TaskItem({task}) {
 			<div className="tasks__item-value">
 				{task.name}
 			</div>
+			<button 
+				onClick={() => deleteTask(task.id)}
+				className="task__delete"
+			>x</button>
 		</li>
 	)
 }

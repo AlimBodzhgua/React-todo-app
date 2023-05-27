@@ -116,6 +116,7 @@ body{
     background-color: #E5E5E5;
 
     overflow-x: hidden;
+    transition: border .3s linear;
 }
 
 .sidebar__header {
@@ -149,6 +150,8 @@ body{
 
 
 .categories__item {
+    position: relative;
+
     display: flex;
     align-items: center;
 
@@ -162,9 +165,33 @@ body{
     transform: translateX(10%);
 }
 
+.categories__item.selected > .item__delete{
+    transform: translateX(-100%);
+}
+
 .categories__item:hover {
     cursor: pointer;
     border-left: 3px solid green;
+}
+
+.item__delete {
+    position: absolute;
+    right: 0;
+    display: none;
+    margin-left: 35px;
+
+    width: 24px;
+    height: 24px;
+
+    border-radius: 50%;
+    border: none;
+
+    cursor: pointer;
+    transition: transform .2s linear;
+}
+
+.categories__item:hover .item__delete{
+    display: block;
 }
 
 .item__color {
@@ -178,10 +205,6 @@ body{
 
     transition: order .2s linear;
 }
-
-/*.item__color.selected {
-    order: 1;
-}*/
 
 .item__text {
 
@@ -309,6 +332,7 @@ body{
 
 .tasks {
     padding: 45px 35px;
+    width: 30%;
 }
 
 .tasks__title {
@@ -326,6 +350,7 @@ body{
     display: flex;
     align-items: center;
     margin-bottom: 10px;
+    position: relative;
 }
 
 .tasks__item-value {
@@ -348,6 +373,9 @@ body{
     border: 1px solid black;
 }
 
+.tasks__item {
+}
+
 
 .tasks__select {
     width: 18px;
@@ -358,6 +386,21 @@ body{
 
 .task__select:checked {
     background-color: green;
+}
+
+.task__delete {
+    border-radius: 50%;
+    border: none;
+
+    width: 23px;
+    height: 23px;
+
+    position: absolute;
+    right: 0;
+}
+
+.task__delete:hover {
+    cursor: pointer;
 }
 
 .add__task-menu {
