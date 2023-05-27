@@ -48,10 +48,9 @@ export default function Tasks({selectedCategory}) {
 		console.log("CHANGE TASK");
 		const updatedTasks = currentCategory.tasks
 			.map(task => task.id === completeTask 
-				? {...task, isCompleted: !task.isComplete}
+				? {...task, isCompleted: !task.isCompleted}
 				: task
 			)
-
 		setCurrentCategory({...currentCategory, tasks: updatedTasks});
 	}
 

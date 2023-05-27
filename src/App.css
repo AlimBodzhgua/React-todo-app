@@ -393,14 +393,24 @@ body{
     border: none;
 
     width: 23px;
-    height: 23px;
+    height: 24px;
 
+    font-weight: 700;
+    vertical-align: middle;
+    
     position: absolute;
     right: 0;
+
+    transform: scale(0);
+    transition: transform .2s ease-out;
 }
 
 .task__delete:hover {
     cursor: pointer;
+}
+
+.tasks__item:hover .task__delete{
+    transform: scale(1);
 }
 
 .add__task-menu {

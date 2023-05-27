@@ -3,7 +3,7 @@
     {
       "id": 1,
       "email": "alimbo1@mail.ru",
-      "password": "$2a$10$KXxNJ6KT9U7aEV0pU0UOZ.rAA1u.oQV79CK0dMiMBHcLlO54A9aTu",
+      "password": "$2a$10$ByBQnVJTecl78rqzgpYqqOuozt/phUrTZWeL3VZ0QLAKZZVFuxika",
       "login": "alimbo1",
       "categories": [
         {
@@ -15,51 +15,10 @@
               "id": 1,
               "name": "sd",
               "isCompleted": false
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "name": "back",
-          "color": "#FF4500",
-          "tasks": [
-            {
-              "id": 1,
-              "name": "cxzc",
-              "isCompleted": true
             },
             {
               "id": 2,
-              "name": "zxc",
-              "isCompleted": true
-            },
-            {
-              "id": 3,
-              "name": "b nm",
-              "isCompleted": false
-            }
-          ]
-        },
-        {
-          "id": 3,
-          "name": "trew",
-          "color": "#800080",
-          "tasks": [
-            {
-              "id": 1,
-              "name": "new task",
-              "isCompleted": false
-            }
-          ]
-        },
-        {
-          "id": 4,
-          "name": "zxcw",
-          "color": null,
-          "tasks": [
-            {
-              "id": 1,
-              "name": "rew",
+              "name": "qwe",
               "isCompleted": true
             }
           ]

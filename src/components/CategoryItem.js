@@ -5,7 +5,7 @@ import axios from 'axios';
 export default function CategoryItem({category, selectedCategory, setSelectedCategory, setBorderColor}) {
 	const {user, setUser} = useContext(UserContext);
 
-	const selectCategory = (e, category) => {
+	const selectCategory = (category) => {
 		setSelectedCategory(category.id);
 		setBorderColor(category.color);
 	}
@@ -13,19 +13,16 @@ export default function CategoryItem({category, selectedCategory, setSelectedCat
 	const deleteItem = (e, toDeletecategory) => {
 		e.preventDefault();
 
-		const result = user.categories
+		const updatedCategories = user.categories
 			.filter(category => category.id !== toDeletecategory)
 			.map(category => 
 				category.id > toDeletecategory ? {...category, id: category.id - 1} : category
-			)
-		//setUser(prev => ({...prev, categories: result}));
-		//setUser(({...user, categories: result}));
-		//axios.patch(`http://localhost:8080/users/${user.id}`, user);
+			);
+		const newUser = {...user, categories: updatedCategories};
+		setSelectedCategory(1);
+		setUser(newUser);
+		axios.patch(`http://localhost:8080/users/${user.id}`, newUser);
 	}
-
-	/*useEffect(() => {
-		console.log(user);
-	}, [user])*/
 
 	return (
 		<li 
@@ -33,7 +30,7 @@ export default function CategoryItem({category, selectedCategory, setSelectedCat
 				? "categories__item selected"
 				: "categories__item"
 			} 
-			onClick={(e) => selectCategory(e, category)}
+			onClick={() => selectCategory(category)}
 		>
 			<span className="item__color"
 				style={{background:category.color}}

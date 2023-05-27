@@ -37,8 +37,7 @@ export default function AddCategory({addMenu, setSelectedCategory, setBorderColo
 
 	useEffect(() => {
 		axios.patch(`http://localhost:8080/users/${user.id}`, user)
-			.then(response => console.log('ADD CATEGORY:', response))
-			.catch(error => console.log('ADD CATEGORY:', error))
+			.catch(error => console.log('Error adding a new category:', error.message))
 	}, [user])
 
 	return (
