@@ -3,7 +3,7 @@
     {
       "id": 1,
       "email": "alimbo1@mail.ru",
-      "password": "$2a$10$ByBQnVJTecl78rqzgpYqqOuozt/phUrTZWeL3VZ0QLAKZZVFuxika",
+      "password": "$2a$10$jW/RQGP00i8r8CMkM22./en8W3tgIpKza3jRij7jBoLHiFqA0n1nC",
       "login": "alimbo1",
       "categories": [
         {
@@ -13,13 +13,25 @@
           "tasks": [
             {
               "id": 1,
-              "name": "sd",
-              "isCompleted": false
+              "name": "sdwer",
+              "isCompleted": true
             },
             {
               "id": 2,
-              "name": "qwe",
-              "isCompleted": true
+              "name": "qwewee",
+              "isCompleted": false
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "frontend",
+          "color": "#1E90FF",
+          "tasks": [
+            {
+              "id": 1,
+              "name": "bjh",
+              "isCompleted": false
             }
           ]
         }

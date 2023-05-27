@@ -158,7 +158,8 @@ body{
     width: 100%;
     margin: 5px 0;
 
-    transition: transform .2s linear;
+    transition: 
+        transform .2s linear,
 }
 
 .categories__item.selected {
@@ -166,7 +167,7 @@ body{
 }
 
 .categories__item.selected > .item__delete{
-    transform: translateX(-100%);
+    transform: scale(1) translateX(-100%);
 }
 
 .categories__item:hover {
@@ -177,21 +178,30 @@ body{
 .item__delete {
     position: absolute;
     right: 0;
-    display: none;
+
+    display: block;
     margin-left: 35px;
 
     width: 24px;
     height: 24px;
 
+    font-weight: 700;
+
     border-radius: 50%;
     border: none;
 
     cursor: pointer;
+
+    transform: scale(0);
     transition: transform .2s linear;
 }
 
 .categories__item:hover .item__delete{
-    display: block;
+    transform: scale(1) translateY(0);
+}
+
+.categories__item:hover.selected > .item__delete{
+    transform: scale(1) translateX(-100%);
 }
 
 .item__color {
@@ -332,7 +342,7 @@ body{
 
 .tasks {
     padding: 45px 35px;
-    width: 30%;
+    width: 33%;
 }
 
 .tasks__title {
@@ -349,8 +359,18 @@ body{
 .tasks__item {
     display: flex;
     align-items: center;
+
     margin-bottom: 10px;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 17px;
+
     position: relative;
+}
+
+.tasks__item:hover .task__delete,
+.tasks__item:hover .task__edit {
+    transform: scale(1);
 }
 
 .tasks__item-value {
@@ -374,6 +394,12 @@ body{
 }
 
 .tasks__item {
+    transition: border .3s ease-in-out;
+}
+
+.tasks__item:hover {
+    /*border-bottom: 1px solid #00BFFF;*/
+    box-shadow: 1px 1px 1px rgba(0, 191, 255, .7);
 }
 
 
@@ -388,30 +414,73 @@ body{
     background-color: green;
 }
 
-.task__delete {
-    border-radius: 50%;
+.task__delete,
+.task__edit,
+.task__complete {
     border: none;
 
-    width: 23px;
-    height: 24px;
+    width: 24px;
+    height: 26px;
 
     font-weight: 700;
     vertical-align: middle;
     
     position: absolute;
-    right: 0;
 
     transform: scale(0);
-    transition: transform .2s ease-out;
+    transition:
+        transform .2s ease-out,
+        border .3s ease-out
 }
 
-.task__delete:hover {
+.task__delete {
+    right: 5px;   
+    font-size: 0;
+    color: transparent;
+
+    background: url('assets/icons/trash.svg') center no-repeat;
+    background-size: contain; 
+}
+
+.task__delete:hover,
+.task__edit:hover,
+.task__complete:hover {
     cursor: pointer;
+    border: 1px solid #4DD599;/*#00BFFF*/
 }
 
-.tasks__item:hover .task__delete{
-    transform: scale(1);
+.task__edit {
+    right: 33px;
+    font-size: 0;
+    color: transparent;
+    background-color: transparent;
+
+    background-image: url('assets/icons/edit.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
+
+.task__complete {
+    transform: scale(1.0);
+    right: 66px;
+    font-size: 0;
+    color: transparent;
+
+    background: url('assets/icons/complete.svg') center no-repeat;
+    background-size: contain;
+}
+
+.task__change {
+    padding: 3px 2px;
+    border: 1px solid #00BFFF;
+}
+
+.task__change:focus {
+    outline: none;
+}
+
+
 
 .add__task-menu {
     color: #767676;

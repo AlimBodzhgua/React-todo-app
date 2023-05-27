@@ -12,6 +12,8 @@ export default function Tasks({selectedCategory}) {
 	const [taskMenu, setTaskMenu] = useState(false);
 	const [currentCategory, setCurrentCategory] = useState({});
 
+	const [changingTask, setChangingTask] = useState({id: 0, value: ''});
+
 	//Show selected category tasks
 	useEffect(() => {
 		if (!isObjectEmpty(user)) {
@@ -21,8 +23,27 @@ export default function Tasks({selectedCategory}) {
 		}
 	}, [selectedCategory])
 
+	const changeTask = (task) => {
+		if (changingTask.id === task.id) {
+			setChangingTask({...changingTask, id: 0});
+		} else {
+			setChangingTask({id: task.id, value: task.name});
+		}
+	}
+
+	const saveChangedTask = () => {
+		const updatedTasks = currentCategory.tasks.map(task => {
+			if (task.id === changingTask.id) {
+				return {...task, name: changingTask.value}
+			} 
+			return task;
+		})
+
+		setCurrentCategory({...currentCategory, tasks: updatedTasks});
+		setChangingTask({id: 0, value: ''});
+	}
+
 	const addTask = (value) => {
-		console.log("ADD TASK");
 		const newTask = {
 			id: currentCategory.tasks.length + 1,
 			name: value,
@@ -35,7 +56,6 @@ export default function Tasks({selectedCategory}) {
 	}
 
 	const deleteTask = (deleteTask) => {
-		console.log("DELETE TASK");
 		const updatedTasks = currentCategory.tasks
 			.filter(task => task.id !== deleteTask)
 			.map(task => task.id > deleteTask ? {...task, id: task.id - 1} : task);
@@ -45,7 +65,6 @@ export default function Tasks({selectedCategory}) {
 	}
 
 	const changeTaskComplete = (completeTask) => {
-		console.log("CHANGE TASK");
 		const updatedTasks = currentCategory.tasks
 			.map(task => task.id === completeTask 
 				? {...task, isCompleted: !task.isCompleted}
@@ -56,7 +75,6 @@ export default function Tasks({selectedCategory}) {
 
 
 	useEffect(() => {
-		console.log('CURRENT CATEGORY CHANGE');
 		if (!isObjectEmpty(currentCategory)) {
 			const updatedCategories = user.categories.map(category => {
 				if (category.id === currentCategory.id) {
@@ -80,6 +98,10 @@ export default function Tasks({selectedCategory}) {
 						task={task}
 						deleteTask={deleteTask}
 						changeTaskComplete={changeTaskComplete}
+						changeTask={changeTask}
+						changingTask={changingTask}
+						setChangingTask={setChangingTask}
+						saveChangedTask={saveChangedTask}
 					/>
 				)}
 			</ul>
