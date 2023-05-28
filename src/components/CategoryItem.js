@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useMemo} from 'react';
+import UserService from '../API/UserService';
 import {UserContext} from '../context/index';
-import axios from 'axios';
 
 export default function CategoryItem({category, selectedCategory, setSelectedCategory, setBorderColor}) {
 	const {user, setUser} = useContext(UserContext);
@@ -12,16 +12,17 @@ export default function CategoryItem({category, selectedCategory, setSelectedCat
 
 	const deleteItem = (e, toDeletecategory) => {
 		e.preventDefault();
-
 		const updatedCategories = user.categories
 			.filter(category => category.id !== toDeletecategory)
 			.map(category => 
 				category.id > toDeletecategory ? {...category, id: category.id - 1} : category
 			);
 		const newUser = {...user, categories: updatedCategories};
+
 		setSelectedCategory(1);
 		setUser(newUser);
-		axios.patch(`http://localhost:8080/users/${user.id}`, newUser);
+
+		UserService.updateUser(newUser);
 	}
 
 	return (
