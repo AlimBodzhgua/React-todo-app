@@ -4,23 +4,21 @@ import axios from 'axios';
 import {UserContext} from '../context/index';
 import CategoryList from './CategoryList';
 
-
-export default function Sidebar({selectedCategory, setSelectedCategory}) {
-	const {user, setUser, fetchUser} = useContext(UserContext);
+export default function Sidebar({selectedCategory, setSelectedCategory, isLoading}) {
+	const {user, setUser, error} = useContext(UserContext);
 
 	const [addCategoryMenu, setAddCategoryMenu] = useState(false);
-	const [userIsLoading, setUserIsLoading] = useState(true);
 	const [borderColor, setBorderColor] = useState();
-
-	useEffect(() => {
-		const token = localStorage.getItem('token');
-		fetchUser(token);
-		setUserIsLoading(false);
-	}, [])
 
 	const addMenu = (e) => {
 		e.preventDefault();
 		setAddCategoryMenu(!addCategoryMenu);
+	}
+
+	if (error) {
+		return (
+			<h1>Error getting user data {error}</h1>
+		)
 	}
 
 	return (
@@ -30,7 +28,7 @@ export default function Sidebar({selectedCategory, setSelectedCategory}) {
 				<h3 className="sidebar__title">Все задачи</h3>
 			</div>
 
-			{userIsLoading 
+			{isLoading 
 				? <h3>Loading content...</h3>
 				: <CategoryList 
 					user={user}

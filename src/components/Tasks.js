@@ -1,10 +1,9 @@
 import React, {useState, useRef, useEffect, useContext} from 'react';
-import {unstable_batchedUpdates} from 'react-dom';
-import AddTask from './AddTask.js';
 import {UserContext} from '../context/index';
 import {isObjectEmpty} from '../utils/utils.js';
+import AddTask from './AddTask.js';
 import TaskItem from './TaskItem.js';
-import axios from 'axios';
+import UserService from '../API/UserService';
 
 import { CSSTransition,TransitionGroup} from 'react-transition-group';
 
@@ -15,7 +14,6 @@ export default function Tasks({selectedCategory}) {
 
 	const [changingTask, setChangingTask] = useState({id: 0, value: ''});
 
-	//Show selected category tasks
 	useEffect(() => {
 		if (!isObjectEmpty(user)) {
 			setCurrentCategory(...user.categories
@@ -85,7 +83,7 @@ export default function Tasks({selectedCategory}) {
 			})
 			const newUser = {...user, categories: updatedCategories} 
 			setUser(newUser);
-			axios.patch(`http://localhost:8080/users/${user.id}`, newUser);
+			UserService.updateUser(newUser);
 		}
 	}, [currentCategory]) 
 	
