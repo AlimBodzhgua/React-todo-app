@@ -3,34 +3,39 @@
     {
       "id": 1,
       "email": "alimbo1@mail.ru",
-      "password": "$2a$10$jW/RQGP00i8r8CMkM22./en8W3tgIpKza3jRij7jBoLHiFqA0n1nC",
+      "password": "$2a$10$Bvu5H7ixzVbJnvYUvgu0weXn13t0.SZZWrWE.2CnD6B0itlL9KuM2",
       "login": "alimbo1",
       "categories": [
         {
           "id": 1,
-          "name": "new cat",
-          "color": "#32CD32",
-          "tasks": [
-            {
-              "id": 1,
-              "name": "sdwer",
-              "isCompleted": true
-            },
-            {
-              "id": 2,
-              "name": "qwewee",
-              "isCompleted": false
-            }
-          ]
-        },
-        {
-          "id": 2,
           "name": "frontend",
           "color": "#1E90FF",
           "tasks": [
             {
               "id": 1,
               "name": "bjh",
+              "isCompleted": false
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "zxc",
+          "color": "#32CD32",
+          "tasks": [
+            {
+              "id": 1,
+              "name": "task1",
+              "isCompleted": false
+            },
+            {
+              "id": 2,
+              "name": "task2",
+              "isCompleted": false
+            },
+            {
+              "id": 3,
+              "name": "task4",
               "isCompleted": false
             }
           ]

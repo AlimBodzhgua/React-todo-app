@@ -6,6 +6,7 @@ import {isObjectEmpty} from '../utils/utils.js';
 import TaskItem from './TaskItem.js';
 import axios from 'axios';
 
+import { CSSTransition,TransitionGroup} from 'react-transition-group';
 
 export default function Tasks({selectedCategory}) {
 	const {user, setUser} = useContext(UserContext);
@@ -92,18 +93,25 @@ export default function Tasks({selectedCategory}) {
 		<div className="tasks">
 			<h2 className="tasks__title">{currentCategory?.name}</h2>
 			<ul className="tasks__list">
-				{currentCategory?.tasks?.map(task => 
-					<TaskItem 
-						key={task.id}
-						task={task}
-						deleteTask={deleteTask}
-						changeTaskComplete={changeTaskComplete}
-						changeTask={changeTask}
-						changingTask={changingTask}
-						setChangingTask={setChangingTask}
-						saveChangedTask={saveChangedTask}
-					/>
-				)}
+				<TransitionGroup>
+					{currentCategory?.tasks?.map(task => 
+						<CSSTransition 
+							key={task.id}
+			             	timeout={500}
+            				classNames="task"
+            			>
+							<TaskItem 
+								task={task}
+								deleteTask={deleteTask}
+								changeTaskComplete={changeTaskComplete}
+								changeTask={changeTask}
+								changingTask={changingTask}
+								setChangingTask={setChangingTask}
+								saveChangedTask={saveChangedTask}
+							/>
+						</CSSTransition>
+					)}
+				</TransitionGroup>
 			</ul>
 
 			{ taskMenu

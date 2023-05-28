@@ -6,6 +6,7 @@ export const UserContext = createContext();
 export default function UserProvider({children}) {
 	const [user, setUser] = useState({});
 	const [isLoading, setIsLoading] = useState(true);
+	//const [error, setError] = useState('')
 
 	async function fetchUser(token) {
 		try {
